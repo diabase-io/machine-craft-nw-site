@@ -1,5 +1,5 @@
 <script>
-  import { Hero } from '$lib/components'
+  import { Hero, Certs } from '$lib/components'
 </script>
 
 <main>

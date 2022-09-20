@@ -2,78 +2,60 @@
   import mcnwLogo from '$lib/assets/mcnw-logo.png'
 </script>
 
-<div class="navbar bg-base-100">
-  <div class="navbar-start">
-    <div class="dropdown">
-      <!-- svelte-ignore a11y-label-has-associated-control -->
-      <label tabindex="0" class="btn btn-ghost lg:hidden">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          ><path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h8m-8 6h16"
-          /></svg
-        >
-      </label>
-      <ul
-        tabindex="0"
-        class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
-      >
-        <li><a href={''}>Item 1</a></li>
-        <li tabindex="0">
-          <a class="justify-between" href={''}>
-            Parent
+<div class="drawer">
+  <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
+  <div class="drawer-content flex flex-col">
+    <!-- Navbar -->
+    <div class="w-full navbar bg-base-100">
+      <div class="navbar-start">
+        <div class="flex-none lg:hidden">
+          <label for="my-drawer-3" class="btn btn-square btn-ghost">
             <svg
-              class="fill-current"
               xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
+              fill="none"
               viewBox="0 0 24 24"
-              ><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg
+              class="inline-block w-6 h-6 stroke-current"
+              ><path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              /></svg
             >
-          </a>
-          <ul class="p-2">
-            <li><a href={''}>Submenu 1</a></li>
-            <li><a href={''}>Submenu 2</a></li>
+          </label>
+        </div>
+      </div>
+
+      <div class="navbar-center flex">
+        <div class="flex-none hidden lg:block">
+          <ul class="menu menu-horizontal">
+            <!-- Navbar menu content here -->
+            <li><a href={''}>Navbar Item 1</a></li>
+            <li><a href={''}>Navbar Item 2</a></li>
           </ul>
-        </li>
-        <li><a href={''}>Item 3</a></li>
-      </ul>
+        </div>
+        <div class="block lg:hidden">
+          <a class="btn btn-ghost normal-case text-xl" href={''}
+          ><img src={mcnwLogo} class=" w-12" alt="" /></a
+        >
+        </div>
+        
+      </div>
+
+      <div class="navbar-end">
+        <a class="btn btn-sm btn-accent text-xs lg:text-base mr-4" href={''}>Virtual Tour!</a>
+        <a class="btn btn-sm btn-primary text-xs lg:text-base" href={''}>Request a Quote</a>
+      </div>
     </div>
-    <a class="btn btn-ghost normal-case text-xl" href={''}><img src={mcnwLogo} class=" w-10" alt="" /></a>
-    
+    <!-- Page content here -->
+    <slot />
   </div>
-  <div class="navbar-center hidden lg:flex">
-    <ul class="menu menu-horizontal p-0">
-      <li><a href={''}>Item 1</a></li>
-      <li tabindex="0">
-        <a href={''}>
-          Parent
-          <svg
-            class="fill-current"
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            ><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg
-          >
-        </a>
-        <ul class="p-2">
-          <li><a href={''}>Submenu 1</a></li>
-          <li><a href={''}>Submenu 2</a></li>
-        </ul>
-      </li>
-      <li><a href={''}>Item 3</a></li>
+  <div class="drawer-side">
+    <label for="my-drawer-3" class="drawer-overlay" />
+    <ul class="menu p-4 overflow-y-auto w-80 bg-base-100">
+      <!-- Sidebar content here -->
+      <li><a href={''}>Sidebar Item 1</a></li>
+      <li><a href={''}>Sidebar Item 2</a></li>
     </ul>
-  </div>
-  <div class="navbar-end">
-    <a class="btn btn-accent" href={''}>Virtual Tour!</a>
-    <a class="btn btn-primary" href={''}>Request a Quote</a>
   </div>
 </div>
