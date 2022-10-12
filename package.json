@@ -35,5 +35,8 @@
     "typescript": "^4.7.4",
     "vite": "^3.0.4"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "@fontsource/maven-pro": "^4.5.12"
+  }
 }

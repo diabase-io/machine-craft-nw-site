@@ -1,13 +1,19 @@
 <script>
   import mcnwLogo from '$lib/assets/mcnw-logo.png'
+  import { Locon } from '$lib/components'
 </script>
 
-<div class="drawer">
+<div class="drawer h-full">
   <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
   <div class="drawer-content flex flex-col">
     <!-- Navbar -->
-    <div class="w-full navbar bg-base-100">
+    <div class="w-full navbar bg-base-200">
       <div class="navbar-start">
+        <div class="hidden lg:block">
+          <a class="btn btn-ghost normal-case text-xl p-0" href={'/'}>
+            <Locon locon="mcnwLightMin" class=" w-14" />
+          </a>
+        </div>
         <div class="flex-none lg:hidden">
           <label for="my-drawer-3" class="btn btn-square btn-ghost">
             <svg
@@ -30,21 +36,22 @@
         <div class="flex-none hidden lg:block">
           <ul class="menu menu-horizontal">
             <!-- Navbar menu content here -->
-            <li><a href={''}>Navbar Item 1</a></li>
-            <li><a href={''}>Navbar Item 2</a></li>
+            <li><a href={'/work'}>The Work</a></li>
+            <li><a href={'/shop'}>The Shop</a></li>
+            <li><a href={'/machines'}>The Machines</a></li>
+            <li><a href={'/blog'}>The Blog</a></li>
           </ul>
         </div>
         <div class="block lg:hidden">
-          <a class="btn btn-ghost normal-case text-xl" href={''}
-          ><img src={mcnwLogo} class=" w-12" alt="" /></a
-        >
+          <a class="btn btn-ghost normal-case text-xl" href={''}>
+            <Locon locon="mcnwLightMin" />
+          </a>
         </div>
-        
       </div>
 
       <div class="navbar-end">
-        <a class="btn btn-sm btn-accent text-xs lg:text-base mr-4" href={''}>Virtual Tour!</a>
-        <a class="btn btn-sm btn-primary text-xs lg:text-base" href={''}>Request a Quote</a>
+        <a class="btn btn-sm btn-secondary text-xs lg:text-sm mr-4" href={''}>Virtual Tour!</a>
+        <a class="btn btn-sm btn-primary text-xs lg:text-sm" href={''}>Get a Quote</a>
       </div>
     </div>
     <!-- Page content here -->

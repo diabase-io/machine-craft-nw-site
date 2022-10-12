@@ -1,6 +1,13 @@
 <script lang="ts">
   import '../app.css'
-  import { NavBar, Footer } from '$lib/components'
+  import '@fontsource/maven-pro/400.css'
+  import '@fontsource/maven-pro/500.css'
+  import '@fontsource/maven-pro/600.css'
+  import '@fontsource/maven-pro/700.css'
+  import '@fontsource/maven-pro/800.css'
+  import '@fontsource/maven-pro/900.css'
+
+  import { NavBar, Footer } from '$components'
 </script>
 
 <svelte:head>
@@ -8,9 +15,6 @@
 </svelte:head>
 
 <main class="min-h-screen w-full">
-  <div class="alert alert-info shadow-lg">
-    Be sure to check out the virutual tour!
-  </div>
   <NavBar>
     <slot />
   </NavBar>

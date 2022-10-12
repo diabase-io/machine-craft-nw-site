@@ -1,7 +1,11 @@
 import adapter from '@sveltejs/adapter-static'
 import preprocess from 'svelte-preprocess'
+import path from 'path'
 
 const dev = process.env.NODE_ENV === 'development'
+const getCommon = async () => {
+  const { default: Common, Hardfork } = await import('@ethereumjs/common')
+}
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -12,6 +16,10 @@ const config = {
   }),
 
   kit: {
+    alias: {
+      $components: path.resolve('./src/lib/components/')
+    },
+
     adapter: adapter({
       pages: 'build',
       assets: 'build',
@@ -23,7 +31,7 @@ const config = {
     },
     trailingSlash: 'always',
     paths: {
-      base: dev ? '' : '/machine-craft-nw-site'
+      base: dev ? '/' : '' //'/machine-craft-nw-site'
     },
     appDir: 'internal'
   }
