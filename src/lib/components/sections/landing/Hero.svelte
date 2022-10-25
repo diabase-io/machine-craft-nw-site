@@ -2,9 +2,9 @@
   import { Locon } from '$components'
 </script>
 
-<div class="hero min-h-[90vh] bg-base-200 p-8">
+<div class="hero h-[90vh] bg-base-200 p-8">
   <div class="hero-content flex-col lg:flex-row">
-    <Locon locon="mcnwLightFull" class="w-64" />
+    <Locon locon="mcnwLightFull" class="w-64 mr-12" />
     <div>
       <h1 class="text-5xl font-bold">Precision Machining</h1>
       <p class="py-6 max-w-lg">

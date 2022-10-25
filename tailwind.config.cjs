@@ -8,11 +8,12 @@ module.exports = {
     themes: [
       {
         dark: {
-          primary: '#008EDE',
+          primary: '#1980FA',
           secondary: '#A55FFE',
           accent: '#37cdbe',
           neutral: '#3d4451',
-          'base-200': '#030114'
+          'base-200': '#030114',
+          black: '#0A001A'
         }
       }
     ]

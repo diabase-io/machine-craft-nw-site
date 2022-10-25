@@ -14,9 +14,10 @@
   <title>Machine Craft Northwest</title>
 </svelte:head>
 
-<main class="min-h-screen w-full">
+<main>
   <NavBar>
     <slot />
+    <Footer />
   </NavBar>
-  <Footer />
+
 </main>

@@ -6,3 +6,10 @@ body {
   font-family: 'Maven Pro', sans-serif;
   color: #ffffff;
 }
+
+html,
+body {
+  height: 100%;
+}
+
+

@@ -1,13 +1,12 @@
 <script>
-  import mcnwLogo from '$lib/assets/mcnw-logo.png'
   import { Locon } from '$lib/components'
 </script>
 
-<div class="drawer h-full">
+<div class="drawer">
   <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
   <div class="drawer-content flex flex-col">
     <!-- Navbar -->
-    <div class="w-full navbar bg-base-200">
+    <div class="w-full navbar bg-base-200 fixed">
       <div class="navbar-start">
         <div class="hidden lg:block">
           <a class="btn btn-ghost normal-case text-xl p-0" href={'/'}>

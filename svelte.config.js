@@ -3,9 +3,6 @@ import preprocess from 'svelte-preprocess'
 import path from 'path'
 
 const dev = process.env.NODE_ENV === 'development'
-const getCommon = async () => {
-  const { default: Common, Hardfork } = await import('@ethereumjs/common')
-}
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
