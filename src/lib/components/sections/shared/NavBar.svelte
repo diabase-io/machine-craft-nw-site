@@ -54,24 +54,24 @@
     <!-- desktop: horizontal menu in header -->
     <!-- mobile: this is the menu drawer that's toggled -->
     <div class="{mobileMenuDisplaying ? 'block absolute top-[var(--hd)] left-0 w-full bg-black' : 'hidden '}
-      lg:flex lg:flex-col lg:justify-center lg:static"
+      z-50 lg:flex flex-col justify-center lg:static pb-5 lg:p-0"
     >
-      <ul class="menu menu-vertical w-[200px] mx-auto lg:menu-horizontal lg:w-min">
+      <ul class="menu menu-vertical w-[200px] lg:w-max mx-auto lg:menu-horizontal ">
         <li><a draggable="false" href={'/work'}>The Work</a>
         <li><a draggable="false" href={'/shop'}>The Shop</a>
         <li><a draggable="false" href={'/machines'}>The Machines</a>
         <li><a draggable="false" href={'/blog'}>The Blog</a></li>
 
-        <div class='h-[var(--hd)] flex flex-col justify-center'>
+        <div class='py-2 lg:py-0 lg:h-[var(--hd)] flex flex-col justify-center lg:mr-4'>
           <button
             on:click={toggleMenu}
-            class=" btn btn-secondary w-40 lg:w-min"
+            class=" btn btn-secondary w-40 lg:w-max"
           >
             Virtual Tour
           </button>
         </div>
         
-        <div class='h-[var(--hd)] flex flex-col justify-center'>
+        <div class='py-2 lg:py-0 lg:h-[var(--hd)] flex flex-col justify-center'>
           <button
             on:click={toggleMenu}
             class=" btn btn-primary"

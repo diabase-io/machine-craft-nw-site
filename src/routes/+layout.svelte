@@ -10,6 +10,6 @@
 
 <main>
   <NavBar  />
-  <!-- <slot /> -->
-  <!-- <Footer /> -->
+  <slot />
+  <Footer />
 </main>
