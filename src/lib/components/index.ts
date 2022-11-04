@@ -1,2 +1,2 @@
 export * from './sections'
-export * from './locons'
+export * from './icons'

@@ -1,11 +1,15 @@
 ### UI Changes:
-*Describe any visual changes that were made in this pull request*
+
+_Describe any visual changes that were made in this pull request_
 
 ### Codes Changes
-*Describe any non-visual but important code changes that were made in this pull request*
+
+_Describe any non-visual but important code changes that were made in this pull request_
 
 ### Tester notes:
-*Notes for those Q/A-ing these changes*
+
+_Notes for those Q/A-ing these changes_
 
 ### Notion Card
-*Attach relevant notion cards here*
+
+_Attach relevant notion cards here_

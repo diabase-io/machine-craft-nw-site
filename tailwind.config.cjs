@@ -2,7 +2,26 @@
 module.exports = {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
-    extend: {}
+    extend: {
+      spacing: {
+        header: '5.25rem',
+        21: '5.25rem',
+        22: '5.5rem',
+        23: '5.75rem',
+        25: '6.25rem',
+        26: '6.5rem',
+        27: '6.75rem',
+        29: '7.25rem',
+        30: '7.5rem',
+        31: '7.75rem',
+        33: '8.25rem',
+        34: '8.5rem',
+        35: '8.75rem'
+      },
+      screens: {
+        'dsk': '1280px',
+      }
+    }
   },
   daisyui: {
     themes: [

@@ -3,7 +3,6 @@
   import { InfoPageHeader } from '$components'
 
   $: title = $page.routeId?.split('/')[1] || ''
-
 </script>
 
 <InfoPageHeader {title} />

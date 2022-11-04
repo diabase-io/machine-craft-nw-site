@@ -1,67 +1,84 @@
-<script>
-  import { Locon } from '$lib/components'
+<!-- 
+  @component
+  
+  A header that is fixed to the top of the screen. It has a default height that can be changed
+  by adding a class to it. It's recommended to apply internal margins by using horizontal
+  padding in a class as well.
+ -->
+
+<script lang="ts">
+  import { goto } from '$app/navigation'
+  import { Icon } from '$components'
+  import type { IconType } from '$components/icons/Icon.svelte'
+
+
+  let mobileMenuDisplaying = false
+  let menuToggleIcon: IconType = 'hamburger'
+
+  const toggleMenu = () => {
+    mobileMenuDisplaying = !mobileMenuDisplaying
+    menuToggleIcon = mobileMenuDisplaying ? 'close' : 'hamburger'
+  }
+
 </script>
 
-<div class="drawer">
-  <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
-  <div class="drawer-content flex flex-col">
-    <!-- Navbar -->
-    <div class="w-full navbar bg-base-200 fixed">
-      <div class="navbar-start">
-        <div class="hidden lg:block">
-          <a class="btn btn-ghost normal-case text-xl p-0" href={'/'}>
-            <Locon locon="mcnwLightMin" class=" w-14" />
-          </a>
-        </div>
-        <div class="flex-none lg:hidden">
-          <label for="my-drawer-3" class="btn btn-square btn-ghost">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              class="inline-block w-6 h-6 stroke-current"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              /></svg
-            >
-          </label>
-        </div>
-      </div>
+<style>
+  :root {
+    /* default header height */
+    --hd: 84px;
+  }
+  /* only applies to screen sizes below lg breakpoint */
+  @media (max-width: 1024px) {
+    ul > * {
+      @apply mx-auto
+    }
+  }
+</style>
 
-      <div class="navbar-center flex">
-        <div class="flex-none hidden lg:block">
-          <ul class="menu menu-horizontal">
-            <!-- Navbar menu content here -->
-            <li><a href={'/work'}>The Work</a></li>
-            <li><a href={'/shop'}>The Shop</a></li>
-            <li><a href={'/machines'}>The Machines</a></li>
-            <li><a href={'/blog'}>The Blog</a></li>
-          </ul>
-        </div>
-        <div class="block lg:hidden">
-          <a class="btn btn-ghost normal-case text-xl" href={''}>
-            <Locon locon="mcnwLightMin" />
-          </a>
-        </div>
-      </div>
+<main class="{$$props.class} z-50 h-[var(--hd)] w-full bg-black px-5 text-white md:px-16 dsk:fixed text-xl">
+  <div class="flex justify-between">
 
-      <div class="navbar-end">
-        <a class="btn btn-sm btn-secondary text-xs lg:text-sm mr-4" href={''}>Virtual Tour!</a>
-        <a class="btn btn-sm btn-primary text-xs lg:text-sm" href={''}>Get a Quote</a>
-      </div>
+    <!-- logo -->
+    <a href='/' class="cursor-pointer select-none h-[var(--hd)]">
+      <Icon icon='logoMin' class='w-20'></Icon>
+    </a>
+
+    <!-- mobile: menu toggle button -->
+    <div
+      on:click={toggleMenu}
+      class="h-[var(--hd)] btn btn-ghost lg:hidden"
+    >
+      <Icon icon={menuToggleIcon} class='w-9' />
     </div>
-    <!-- Page content here -->
-    <slot />
-  </div>
-  <div class="drawer-side">
-    <label for="my-drawer-3" class="drawer-overlay" />
-    <ul class="menu p-4 overflow-y-auto w-80 bg-base-100">
-      <!-- Sidebar content here -->
-      <li><a href={''}>Sidebar Item 1</a></li>
-      <li><a href={''}>Sidebar Item 2</a></li>
-    </ul>
-  </div>
-</div>
+
+    <!-- desktop: horizontal menu in header -->
+    <!-- mobile: this is the menu drawer that's toggled -->
+    <div class="{mobileMenuDisplaying ? 'block absolute top-[var(--hd)] left-0 w-full bg-black' : 'hidden '}
+      lg:flex lg:flex-col lg:justify-center lg:static"
+    >
+      <ul class="menu menu-vertical w-[200px] mx-auto lg:menu-horizontal lg:w-min">
+        <li><a draggable="false" href={'/work'}>The Work</a>
+        <li><a draggable="false" href={'/shop'}>The Shop</a>
+        <li><a draggable="false" href={'/machines'}>The Machines</a>
+        <li><a draggable="false" href={'/blog'}>The Blog</a></li>
+
+        <div class='h-[var(--hd)] flex flex-col justify-center'>
+          <button
+            on:click={toggleMenu}
+            class=" btn btn-secondary w-40 lg:w-min"
+          >
+            Virtual Tour
+          </button>
+        </div>
+        
+        <div class='h-[var(--hd)] flex flex-col justify-center'>
+          <button
+            on:click={toggleMenu}
+            class=" btn btn-primary"
+          >
+            Request a Quote
+          </button>
+        </div>
+      </ul>
+    </div>
+</main>
