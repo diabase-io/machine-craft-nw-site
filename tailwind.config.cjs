@@ -19,7 +19,8 @@ module.exports = {
         35: '8.75rem'
       },
       screens: {
-        'dsk': '1280px',
+        // same as xl breakpoint, makes reading code easier
+        dsk: '1280px'
       }
     }
   },

@@ -1,9 +1,3 @@
-<!-- 
-  @component
-  
-  This component substitutes for many icons. Use CSS width and height to change the size.
--->
-
 <!--
   The steps for adding new icons are as follows:
     - move a .svg file into /icons
@@ -11,7 +5,7 @@
     - import the .svelte file below
     - map the import alias to a string name in iconMap
  -->
-<script lang='ts' context='module'>
+<script lang="ts" context="module">
   import LogoFull from './LogoFull.svelte'
   import LogoMin from './LogoMin.svelte'
   import Hamburger from './Hamburger.svelte'
@@ -19,10 +13,10 @@
 
   // matches a string name (the icon name) to an imported svelte components (the icon).
   const iconMap = {
-    'logoFull': LogoFull, 
-    'logoMin': LogoMin,
-    'hamburger': Hamburger,
-    'close': Close
+    logoFull: LogoFull,
+    logoMin: LogoMin,
+    hamburger: Hamburger,
+    close: Close
   }
 
   /** A type representing valid icon names. */
@@ -33,11 +27,16 @@
 </script>
 
 <script lang="ts">
-
   /** The name of the icon to display. */
   export let icon: IconType
 
   $: iconSelect = iconMap[icon]
 </script>
+
+<!-- 
+  @component
+  
+  This component substitutes for many icons. Use CSS width and height to change the size.
+-->
 
 <svelte:component this={iconSelect} class={$$props.class} style={$$props.style} />

@@ -9,7 +9,7 @@
 </svelte:head>
 
 <main>
-  <NavBar  />
+  <NavBar />
   <slot />
   <Footer />
 </main>
