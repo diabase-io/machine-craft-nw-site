@@ -3,7 +3,7 @@
   "tabWidth": 2,
   "singleQuote": true,
   "trailingComma": "none",
-  "printWidth": 1000,
+  "printWidth": 100,
   "proseWrap": "preserve",
   "pluginSearchDirs": ["."],
   "semi": false,
@@ -12,7 +12,10 @@
   "overrides": [
     {
       "files": "*.svelte",
-      "options": { "parser": "svelte", "svelteSortOrder": "options-scripts-styles-markup" }
+      "options": {
+        "parser": "svelte",
+        "svelteSortOrder": "options-scripts-styles-markup",
+      }
     }
   ]
 }

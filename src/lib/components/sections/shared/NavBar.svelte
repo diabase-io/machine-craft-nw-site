@@ -9,9 +9,12 @@
   import { Icon } from '$components'
   import type { IconType } from '$components/icons/Icon.svelte'
 
+  export let defaultHeight = 84
+
   let mobileMenuDisplaying = false
   let menuToggleIcon: IconType = 'hamburger'
 
+  /** opens/closes the mobile menu */
   const toggleMenu = () => {
     mobileMenuDisplaying = !mobileMenuDisplaying
     menuToggleIcon = mobileMenuDisplaying ? 'close' : 'hamburger'
@@ -19,10 +22,6 @@
 </script>
 
 <style>
-  :root {
-    /* default header height */
-    --hd: 84px;
-  }
   /* only applies to screen sizes below lg breakpoint */
   @media (max-width: 1024px) {
     ul > * {
@@ -31,7 +30,10 @@
   }
 </style>
 
-<main class="{$$props.class}  z-50 h-[var(--hd)] w-full bg-black px-5 text-xl text-white md:px-16 dsk:fixed">
+<main
+  style="--hd: {defaultHeight}px"
+  class="{$$props.class} z-50 h-[var(--hd)] w-full bg-black px-5 text-xl text-white md:px-16 dsk:fixed"
+>
   <div class="flex justify-between">
     <!-- logo -->
     <a href="/" class="h-[var(--hd)] cursor-pointer select-none">
@@ -47,7 +49,9 @@
     <!-- mobile: this is the menu drawer that's toggled -->
 
     <div
-      class="{mobileMenuDisplaying ? 'absolute top-[var(--hd)] left-0 block w-full bg-black' : 'hidden '}
+      class="{mobileMenuDisplaying
+        ? 'absolute top-[var(--hd)] left-0 block w-full bg-black'
+        : 'hidden '}
       z-50 flex-col justify-center pb-5 lg:static lg:flex lg:p-0"
     >
       <ul class="menu menu-vertical mx-auto w-52 lg:menu-horizontal lg:w-max ">
@@ -57,11 +61,18 @@
         <li><a draggable="false" href={'/blog'}>The Blog</a></li>
 
         <div class="flex flex-col justify-center py-2 lg:mr-4 lg:h-[var(--hd)] lg:py-0">
-          <button on:click={toggleMenu} class=" btn btn-secondary w-40 lg:w-max"> Virtual Tour </button>
+          <button
+            on:click={toggleMenu}
+            class=" btn btn-secondary w-40 text-lg normal-case lg:w-max"
+          >
+            Virtual Tour
+          </button>
         </div>
 
         <div class="flex flex-col justify-center py-2 lg:h-[var(--hd)] lg:py-0">
-          <button on:click={toggleMenu} class=" btn btn-primary"> Request a Quote </button>
+          <button on:click={toggleMenu} class="btn btn-primary text-lg normal-case">
+            Request a Quote
+          </button>
         </div>
       </ul>
     </div>

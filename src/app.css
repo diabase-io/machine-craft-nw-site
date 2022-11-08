@@ -14,3 +14,58 @@ html,
 body {
   height: 100%;
 }
+
+h1 {
+  font-weight: 600;
+  font-size: 42px;
+  line-height: 63.88px;
+  margin: 20px 0;
+  padding: 0;
+
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 48.67px;
+  margin: 20px 0;
+  padding: 0;
+
+}
+
+h3 {
+  color: var(--gc-white);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36.5px;
+  margin: 20px 0;
+  padding: 0;
+
+}
+
+p {
+  margin: 20px 0;
+  padding: 0;
+}
+
+/* mobile styles */
+@media screen and (max-width: 1023px) {
+
+  h1 {
+    font-size: 34px;
+    line-height: 49px;
+    /* margin: 0 20px; */
+  }
+
+  h2 {
+    font-size: 24px;
+    line-height: 36.5px;
+    /* margin: 0 20px; */
+  }
+
+  h3 {
+    font-size: 22px;
+    line-height: 33.46px;
+    /* margin: 0 20px; */
+  }
+}

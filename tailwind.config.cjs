@@ -3,6 +3,9 @@ module.exports = {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
     extend: {
+      fontSize: {
+        dsk: ['19px', '1.75rem'],
+      },
       spacing: {
         header: '5.25rem',
         21: '5.25rem',
