@@ -58,10 +58,12 @@
   </div>
   <div class="drawer-side">
     <label for="my-drawer-3" class="drawer-overlay" />
-    <ul class="menu p-4 overflow-y-auto w-80 bg-base-100">
+    <ul class="menu p-4 overflow-y-auto w-80 bg-base-200">
       <!-- Sidebar content here -->
-      <li><a href={''}>Sidebar Item 1</a></li>
-      <li><a href={''}>Sidebar Item 2</a></li>
+      <li><a href={'/work'}>The Work</a></li>
+      <li><a href={'/shop'}>The Shop</a></li>
+      <li><a href={'/machines'}>The Machines</a></li>
+      <li><a href={'/blog'}>The Blog</a></li>
     </ul>
   </div>
 </div>

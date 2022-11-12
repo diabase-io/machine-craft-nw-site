@@ -2,18 +2,16 @@
   import { Locon } from '$components'
 </script>
 
-<footer class="footer justify-between px-96 py-10 bg-base-200 text-base-content">
-  <div class="flex items-center">
-    <Locon class="w-28" locon="mcnwLightFull" />
-    <div>
-      <span class="footer-title text-primary opacity-100 text-base">Contact</span>
-      <p>
-        1780 W Airway Road<br />Lebanon, OR 97355
-      </p>
-      <br />
-      <p>Phone: (541) 451-4632 <br /> Email: info@machinecraftnw.com</p>
-    </div>
+<footer class="footer footer-center justify-center lg:justify-between items-center px-10 lg:px-80 py-10 bg-base-200 text-base-content">
+  <Locon class=" w-40" locon="mcnwLightFull" />
+  <div>
+    <span class="footer-title text-primary opacity-100 text-base">Contact</span>
+    <p>
+      1780 W Airway Road<br />Lebanon, OR 97355
+    </p>
+    <p>Phone: (541) 451-4632 <br /> Email: info@machinecraftnw.com</p>
   </div>
+
   <div>
     <span class="footer-title text-primary opacity-100 text-base">Explore</span>
     <a class="link link-hover" href={''}>Portfolio</a>
@@ -23,15 +21,13 @@
     <a class="link link-hover" href={''}>Virtual tour</a>
   </div>
   <div>
-    <span class="footer-title" href={''}>Company</span>
-    <a class="link link-hover" href={''}>The Work</a>
-    <a class="link link-hover" href={''}>The Shop</a>
-    <a class="link link-hover" href={''}>The Machines</a>
-  </div>
-  <div>
-    <span class="footer-title">Legal</span>
-    <a class="link link-hover" href={''}>Terms of use</a>
-    <a class="link link-hover" href={''}>Privacy policy</a>
-    <a class="link link-hover" href={''}>Cookie policy</a>
+    <span class="footer-title text-primary opacity-100 text-base">Company</span>
+    <a class="link link-hover" href={''}>Our Mission</a>
+    <a class="link link-hover" href={''}>About Us</a>
+    <a class="link link-hover" href={''}>Careers</a>
+    <a class="link link-hover" href={''}>Contact Us</a>
   </div>
 </footer>
+<small class="bg-base-200 text-center px-10 lg:px-80 py-10"
+  >© Machine Craft NW 2022 - All Rights Reserved | Website Created by Diabase LLC
+</small>
