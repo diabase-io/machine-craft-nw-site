@@ -1,6 +1,8 @@
 import adapter from '@sveltejs/adapter-static'
 import preprocess from 'svelte-preprocess'
 import path from 'path'
+import { mdsvex } from 'mdsvex'
+
 
 const dev = process.env.NODE_ENV === 'development'
 
@@ -8,13 +10,22 @@ const dev = process.env.NODE_ENV === 'development'
 const config = {
   // Consult https://github.com/sveltejs/svelte-preprocess
   // for more information about preprocessors
-  preprocess: preprocess({
-    postcss: true
-  }),
+  preprocess: [
+    preprocess({
+      postcss: true
+    }),
+    // allows rendering markdown
+    mdsvex({
+      extensions: ['.md']
+    }),
+  ],
+  // allows rendering markdown
+  extensions: ['.svelte', '.md'],
 
   kit: {
     alias: {
-      $components: path.resolve('./src/lib/components/')
+      $components: path.resolve('./src/lib/components/'),
+      $lib: path.resolve('./src/lib/'),
     },
 
     adapter: adapter({
