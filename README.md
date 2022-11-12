@@ -11,3 +11,10 @@
 # Good to knows
 
 `dsk:` breakpoint we use to signify desktop mode, same as `xl:` breakpoint
+
+
+# Developer Info
+
+Created by Peyton Hanel and Taylor Dawson
+
+Visit my [website](https://diabase.io/)
