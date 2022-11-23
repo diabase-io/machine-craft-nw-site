@@ -22,7 +22,6 @@ h1 {
   line-height: 63.88px;
   margin: 20px 0;
   padding: 0;
-
 }
 
 h2 {
@@ -31,7 +30,6 @@ h2 {
   line-height: 48.67px;
   margin: 20px 0;
   padding: 0;
-
 }
 
 h3 {
@@ -41,7 +39,6 @@ h3 {
   line-height: 36.5px;
   margin: 20px 0;
   padding: 0;
-
 }
 
 p {
@@ -51,7 +48,6 @@ p {
 
 /* mobile styles */
 @media screen and (max-width: 1023px) {
-
   h1 {
     font-size: 34px;
     line-height: 49px;

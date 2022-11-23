@@ -5,14 +5,12 @@
   in the user's attention. Hovering over this slightly zooms in the image and animates
   in text and a button.
  -->
-
 <script lang="ts">
+  export let title = 'Title'
 
-  export let title = "Title"
+  export let text = 'text'
 
-  export let text = "text"
-
-  export let buttonText = "Button"
+  export let buttonText = 'Button'
 
   export let backgroundImg: string
 
@@ -35,25 +33,19 @@
 
   /* animates button & text fade */
   main:hover > div > div {
-    transition: .4s opacity ease;
+    transition: 0.4s opacity ease;
     opacity: 1;
   }
   main > div > div {
-    transition: .4s opacity ease;
+    transition: 0.4s opacity ease;
     opacity: 0;
   }
 </style>
 
-<main
-  class='h-screen w-1/3 bg-black overflow-hidden relative text-white'
->
-  <img alt=''
-    src={backgroundImg}
-    style='opacity: {imgOpacity}'
-    class='h-full object-cover'
-  >
-  <div class='absolute top-[60%] left-[18%] text-[22px] w-2/3'>
-    <h1 class='uppercase'>{title}</h1>
+<main class="relative h-screen w-1/3 overflow-hidden bg-black text-white">
+  <img alt="" src={backgroundImg} style="opacity: {imgOpacity}" class="h-full object-cover" />
+  <div class="absolute top-[60%] left-[18%] w-2/3 text-[22px]">
+    <h1 class="uppercase">{title}</h1>
     <div>
       <p>{text}</p>
       <a {href} class="btn btn-primary text-xl normal-case">{buttonText}</a>

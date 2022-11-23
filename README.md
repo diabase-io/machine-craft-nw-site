@@ -19,6 +19,5 @@ them like constants)
 
 This site uses mdsvex in the backend which allows Markdown files to be used at HTML files and svelte components. Installed with `yarn add mdsvex`
 
-We use `notion-to-md` to convert notion pages sent from the api to markdown. 
+We use `notion-to-md` to convert notion pages sent from the api to markdown.
 `svelte.config.js` file (see comments there).
-

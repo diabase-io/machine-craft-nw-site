@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontSize: {
-        dsk: ['19px', '1.75rem'],
+        dsk: ['19px', '1.75rem']
       },
       spacing: {
         header: '5.25rem',
