@@ -26,6 +26,7 @@ const config = {
     alias: {
       $components: path.resolve('./src/lib/components/'),
       $lib: path.resolve('./src/lib/'),
+      $assets: path.resolve('./src/lib/assets'),
     },
 
     adapter: adapter({

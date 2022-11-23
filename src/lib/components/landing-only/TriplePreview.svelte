@@ -1,8 +1,8 @@
 <script>
-  import Preview from "./Preview.svelte"
-  import Plastic from "$lib/assets/small-plastic.jpg"
-  import Shop from "$lib/assets/shop.jpg"
-  import Milling from "$lib/assets/milling-preview.jpg"
+  import Preview from "$components/landing-only/Preview.svelte"
+  import Plastic from "$assets/small-plastic.jpg"
+  import Shop from "$assets/shop.jpg"
+  import Milling from "$assets/milling-preview.jpg"
 
 </script>
 

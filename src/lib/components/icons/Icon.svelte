@@ -1,7 +1,6 @@
 <!--
   The steps for adding new icons are as follows:
-    - move a .svg file into /icons
-    - rename the .svg file to a .svelte file
+    - move a .svg file into /icons and change the ending to .svelte
     - import the .svelte file below
     - map the import alias to a string name in iconMap
  -->

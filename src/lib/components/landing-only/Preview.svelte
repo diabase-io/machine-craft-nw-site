@@ -45,7 +45,7 @@
 </style>
 
 <main
-  class='h-screen w-1/3 bg-black overflow-hidden relative'
+  class='h-screen w-1/3 bg-black overflow-hidden relative text-white'
 >
   <img alt=''
     src={backgroundImg}
