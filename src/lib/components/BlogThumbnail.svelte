@@ -7,9 +7,7 @@
 </script>
 
 <script lang="ts">
-  import { afterUpdate, beforeUpdate, onMount, tick } from 'svelte'
-
-  export let style = Style.Medium
+  export const style = Style.Medium
   export let coverImage: string
   export let title = 'This in an example title.'
   export let text =
@@ -17,54 +15,6 @@
   yad yad ya ya ya'
   export let authorImage: string
   export let author = 'Author Name'
-
-  let textToDisplay = text
-  let strLen: number
-  let textContainer: HTMLElement
-  let textHeight: number
-  let doSlice: boolean
-  let reducedText = false
-  let shortenTextInterval: NodeJS.Timer
-
-  onMount(() => {
-    if (textHeight > textContainer.offsetHeight) {
-      doSlice = true
-
-      // sets this interval to run outside of this codeblock
-      shortenTextInterval = setInterval(() => {
-        if (doSlice) {
-          doSlice = false
-          reducedText = true
-
-          // find the whitespace between the current and previous word.
-          for (let i = textToDisplay.length - 1; i >= 0; i--) {
-            if (textToDisplay[i] === ' ') {
-              if (textToDisplay[i - 1] === '.') {
-                strLen = i - 1
-              } else {
-                strLen = i
-              }
-              break
-            }
-          }
-          // slice at the whitespace
-          textToDisplay = textToDisplay.slice(0, strLen)
-        }
-      }, 1)
-    }
-  })
-
-  afterUpdate(() => {
-    if (textHeight <= textContainer.offsetHeight) {
-      textContainer.classList.remove('opacity-0')
-      if (reducedText) {
-        clearInterval(shortenTextInterval)
-        textToDisplay += '...'
-      }
-    } else {
-      doSlice = true
-    }
-  })
 </script>
 
 <style>
@@ -77,10 +27,6 @@
     transition: filter 0.3s ease;
     filter: drop-shadow(2px 2px 15px rgba(0, 0, 80, 0.4));
   }
-  p {
-    word-wrap: break-word;
-    display: block;
-  }
 </style>
 
 <main
@@ -92,10 +38,8 @@
     <h2 class="m-0 font-medium leading-10">
       {title}
     </h2>
-    <div bind:this={textContainer} class="mt-3 mb-0 min-h-0 flex-grow overflow-hidden opacity-0">
-      <span bind:offsetHeight={textHeight}>
-        {textToDisplay}
-      </span>
+    <div class="mt-3 mb-0 min-h-0 flex-grow overflow-hidden">
+        {text}
     </div>
   </div>
 

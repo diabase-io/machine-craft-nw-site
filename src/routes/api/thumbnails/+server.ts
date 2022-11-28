@@ -1,6 +1,5 @@
 import { NOTION_DATABASE_ID, NOTION_KEY } from '$env/static/private'
 import { Client } from '@notionhq/client'
-import type { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints'
 import { json } from '@sveltejs/kit'
 
 const notionClient = new Client({ auth: NOTION_KEY })
@@ -36,8 +35,6 @@ export async function GET() {
   for (let i = 0; i < pages.results.length; i++) {
     const response = await notionClient.users.retrieve({ user_id: pages.results[i].created_by.id })
     Object.assign(pages.results[i], { author: response })
-    console.log(pages.results[i])
-    console.log(response)
   }
 
   // we got the pages successfully, replace old blog pages
