@@ -2,6 +2,8 @@
   import '../app.css'
 
   import { NavBar, Footer } from '$components'
+  
+  let height = 84;
 </script>
 
 <svelte:head>
@@ -9,7 +11,9 @@
 </svelte:head>
 
 <main>
-  <NavBar />
-  <slot />
+  <NavBar {height}/>
+  <div class='xl:pt-[{height}px]'>
+    <slot />
+  </div>
   <Footer />
 </main>

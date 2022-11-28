@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { InfoPageHeader } from '$components'
   import BlogThumbnail, { Style } from '$components/BlogThumbnail.svelte'
   import type { PageData } from './$types'
 
@@ -6,6 +7,8 @@
 
   // console.log(data.json)
 </script>
+
+<InfoPageHeader title="BLOG" titleFont={280}/>
 
 {#each data.json as thumbnail}
   <BlogThumbnail

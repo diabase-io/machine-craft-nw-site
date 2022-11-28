@@ -9,7 +9,7 @@
   import { Icon } from '$components'
   import type { IconType } from '$components/icons/Icon.svelte'
 
-  export let defaultHeight = 84
+  export let height = 84
 
   let mobileMenuDisplaying = false
   let menuToggleIcon: IconType = 'hamburger'
@@ -31,7 +31,7 @@
 </style>
 
 <main
-  style="--hd: {defaultHeight}px"
+  style="--hd: {height}px"
   class="{$$props.class} z-50 h-[var(--hd)] w-full bg-black px-5 text-xl text-white md:px-16 dsk:fixed"
 >
   <div class="flex justify-between">
