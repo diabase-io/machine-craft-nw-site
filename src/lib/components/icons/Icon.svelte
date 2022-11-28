@@ -25,6 +25,7 @@
   export const IconNames = Object.keys(iconMap)
 </script>
 
+
 <script lang="ts">
   /** The name of the icon to display. */
   export let icon: IconType
