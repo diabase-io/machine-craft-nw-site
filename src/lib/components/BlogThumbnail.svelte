@@ -30,16 +30,25 @@
 
 <style>
   /* adds drop shadow and hover animation */
-  .shadow {
+  /* TODO: this is clipping and making a border somehow. Need to fix this. */
+  main {
     transition: filter 0.3s ease;
     filter: drop-shadow(2px 2px 15px rgba(0, 0, 0, 0.25));
   }
-  .shadow:hover {
+  main:hover {
     transition: filter 0.3s ease;
     filter: drop-shadow(2px 2px 15px rgba(0, 0, 80, 0.4));
   }
 </style>
 
-<div class='shadow inline-block'>
-  <svelte:component class="{$$props.class}" this={thumbnailSize} {coverImage} {title} {text} {authorImage} {author} />
-</div>
+<main class='inline-block'>
+  
+  {#if style === Style.Small}
+  <BlogThumbnailSmall></BlogThumbnailSmall>
+  {:else if style === Style.Medium}
+  <BlogThumbnailMedium class="{$$props.class}" this={thumbnailSize} {coverImage} {title} {text} {authorImage} {author} />
+  {:else if style === Style.Large}
+  <BlogThumbnailLarge class="{$$props.class}" this={thumbnailSize} {coverImage} {title} {text} {authorImage} {author} />
+  {/if}
+  
+</main>

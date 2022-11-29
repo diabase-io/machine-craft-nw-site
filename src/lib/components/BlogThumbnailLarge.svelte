@@ -10,7 +10,7 @@
 
 
 <main
-  class="{$$props.class} relative h-[326px] w-[1320px] overflow-hidden rounded-lg bg-gray-50 text-[19px] flex"
+  class="{$$props.class} relative h-[326px] w-[1320px] rounded-lg bg-gray-50 text-[19px] flex"
 >
   <img class="h-[325px] max-w-[490px] rounded-l-lg object-cover shrink-0" alt="" src={coverImage} />
 
