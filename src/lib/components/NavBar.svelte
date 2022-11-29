@@ -32,7 +32,7 @@
 
 <main
   style="--hd: {height}px"
-  class="{$$props.class} z-50 h-[var(--hd)] w-full bg-black px-5 text-xl text-white md:px-16 dsk:fixed"
+  class="{$$props.class} z-50 h-[var(--hd)] w-full bg-black px-5 text-xl text-white md:px-16 dsk:fixed top-0"
 >
   <div class="flex justify-between">
     <!-- logo -->
