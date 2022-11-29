@@ -8,7 +8,7 @@
   // console.log(data.json)
 </script>
 
-<InfoPageHeader class='m-28' title="THE BLOG" titleFont={280}/>
+<InfoPageHeader class='' title="THE BLOG" titleFont={280}/>
 
 <!-- Subtitle and search bar -->
 <div class='flex gap-10 justify-center'>

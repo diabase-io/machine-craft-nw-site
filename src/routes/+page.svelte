@@ -10,7 +10,6 @@
   <br />
   <br />
   <br />
-  <button class="w-50 h-10 bg-green-700" on:click={updateBlogs}>SYNC FROM NOTION</button>
   <br />
   <br />
   <br />

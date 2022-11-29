@@ -3,7 +3,5 @@
   export let titleFont: number
 </script>
 
-<div class='{$$props.class}'>
-  <h1 style="font-size: {titleFont}px;"
-      class="my-20 whitespace-nowrap font-black text-center ">{title.toUpperCase()}</h1>
-</div>
+  <h1 style="line-height: normal; font-size: {titleFont}px;"
+      class="{$$props.class} -my-6 whitespace-nowrap font-black text-center">{title.toUpperCase()}</h1>

@@ -2,4 +2,4 @@
   import { InfoPageHeader } from "$components"
 </script>
 
-<InfoPageHeader class='m-26' title="THE WORK" titleFont={250}/>
+<InfoPageHeader class='-mt-4' title="THE WORK" titleFont={250}/>

@@ -11,7 +11,7 @@
 
 <main>
   <NavBar {height}/>
-  <div class='xl:pt-[{height}px]'>
+  <div class='xl:pt-[84px]'>
     <slot />
   </div>
   <Footer />
