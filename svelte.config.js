@@ -34,10 +34,10 @@ const config = {
       fallback: '200.html',
       precompress: false
     }),
-    prerender: {
-      default: true
-    },
-    trailingSlash: 'always',
+
+    // for more info on why this is commented out, read: https://github.com/sveltejs/kit/pull/7719
+    // trailingSlash: 'always',
+
     paths: {
       base: dev ? '/' : '' //'/machine-craft-nw-site'
     },
