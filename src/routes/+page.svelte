@@ -6,14 +6,6 @@
 </script>
 
 <main>
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
   <Hero />
   <Certs />
   <TriplePreview />
