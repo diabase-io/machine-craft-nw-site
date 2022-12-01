@@ -22,7 +22,7 @@ textarea {
   height: 50px;
   border-radius: 5px;
   text-indent: 10px;
-  border: solid var(--gc-font-dark) 1px;
+  border: solid #FAFAFA 1px;
 }
 textarea {
   height: 200px !important;
