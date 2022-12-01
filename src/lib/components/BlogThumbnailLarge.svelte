@@ -8,18 +8,15 @@
   export let author = 'Author Name'
 </script>
 
-
-<main
-  class="{$$props.class} relative h-[326px] w-[1320px] rounded-lg bg-gray-50 text-[19px] flex"
->
-  <img class="h-[325px] max-w-[490px] rounded-l-lg object-cover shrink-0" alt="" src={coverImage} />
+<main class="{$$props.class} relative flex h-[326px] w-[1320px] rounded-lg bg-gray-50 text-[19px]">
+  <img class="h-[325px] max-w-[490px] shrink-0 rounded-l-lg object-cover" alt="" src={coverImage} />
 
   <div class="flex h-[340px] flex-col overflow-hidden py-6 px-10">
     <h2 class="m-0 font-medium leading-10">
       {title}
     </h2>
     <div class="mt-3 mb-0 min-h-0 flex-grow overflow-hidden">
-        {text}
+      {text}
     </div>
   </div>
 

@@ -7,6 +7,8 @@
 <script lang="ts" context="module">
   import LogoFull from './LogoFull.svelte'
   import LogoMin from './LogoMin.svelte'
+  import LogoMinDark from './LogoMinDark.svelte'
+
   import Hamburger from './Hamburger.svelte'
   import Close from './Close.svelte'
 
@@ -14,6 +16,7 @@
   const iconMap = {
     logoFull: LogoFull,
     logoMin: LogoMin,
+    logoMinDark: LogoMinDark,
     hamburger: Hamburger,
     close: Close
   }
@@ -24,7 +27,6 @@
   /** An array of valid icon names included within IconType */
   export const IconNames = Object.keys(iconMap)
 </script>
-
 
 <script lang="ts">
   /** The name of the icon to display. */

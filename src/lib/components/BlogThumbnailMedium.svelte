@@ -8,7 +8,6 @@
   export let author = 'Author Name'
 </script>
 
-
 <main
   class="{$$props.class} relative h-[664px] w-[380px] overflow-hidden rounded-lg bg-gray-50 text-[19px]"
 >
@@ -19,7 +18,7 @@
       {title}
     </h2>
     <div class="mt-3 mb-0 min-h-0 flex-grow overflow-hidden">
-        {text}
+      {text}
     </div>
   </div>
 

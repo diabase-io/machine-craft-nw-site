@@ -8,11 +8,26 @@
 <script lang="ts">
   import { Icon } from '$components'
   import type { IconType } from '$components/icons/Icon.svelte'
+  import { page } from '$app/stores'
 
   export let height = 84
 
+  let windowScrollPos: number
   let mobileMenuDisplaying = false
   let menuToggleIcon: IconType = 'hamburger'
+  let relativeStyle: string
+  let currentLogo: IconType
+
+  $: if ($page.route.id === '/(pages)/work') {
+    relativeStyle = 'bg-black text-white'
+    currentLogo = 'logoMin'
+  } else if (windowScrollPos < 100 && $page.route.id === '/') {
+    relativeStyle = 'bg-transparent text-white'
+    currentLogo = 'logoMin'
+  } else {
+    relativeStyle = 'bg-white text-black'
+    currentLogo = 'logoMinDark'
+  }
 
   /** opens/closes the mobile menu */
   const toggleMenu = () => {
@@ -30,14 +45,15 @@
   }
 </style>
 
+<svelte:window bind:scrollY={windowScrollPos} />
 <main
   style="--hd: {height}px"
-  class="{$$props.class} z-50 h-[var(--hd)] w-full bg-black px-5 text-xl text-white md:px-16 dsk:fixed top-0"
+  class="{$$props.class} {relativeStyle} top-0 z-50 h-[var(--hd)] w-full px-5 text-xl transition-all duration-150 md:px-16 dsk:fixed"
 >
   <div class="flex justify-between">
     <!-- logo -->
     <a href="/" class="h-[var(--hd)] cursor-pointer select-none">
-      <Icon icon="logoMin" class="w-20" />
+      <Icon icon={currentLogo} class="w-20" />
     </a>
 
     <!-- mobile: menu toggle button -->

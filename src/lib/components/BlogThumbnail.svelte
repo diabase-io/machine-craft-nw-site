@@ -2,15 +2,15 @@
   export enum Style {
     Small,
     Medium,
-    Large,
+    Large
   }
 </script>
 
 <script lang="ts">
-  import BlogThumbnailLarge from "./BlogThumbnailLarge.svelte"
-  import BlogThumbnailMedium from "./BlogThumbnailMedium.svelte"
-  import BlogThumbnailSmall from "./BlogThumbnailSmall.svelte"
-  
+  import BlogThumbnailLarge from './BlogThumbnailLarge.svelte'
+  import BlogThumbnailMedium from './BlogThumbnailMedium.svelte'
+  import BlogThumbnailSmall from './BlogThumbnailSmall.svelte'
+
   export let style: Style = Style.Medium
   export let coverImage: string
   export let title = 'This in an example title.'
@@ -20,12 +20,7 @@
   export let authorImage: string
   export let author = 'Author Name'
 
-  $: thumbnailSize = [
-    BlogThumbnailSmall,
-    BlogThumbnailMedium,
-    BlogThumbnailLarge,
-  ][style];
-
+  $: thumbnailSize = [BlogThumbnailSmall, BlogThumbnailMedium, BlogThumbnailLarge][style]
 </script>
 
 <style>
@@ -41,14 +36,28 @@
   }
 </style>
 
-<main class='inline-block'>
-  
+<main class="inline-block">
   {#if style === Style.Small}
-  <BlogThumbnailSmall></BlogThumbnailSmall>
+    <BlogThumbnailSmall />
   {:else if style === Style.Medium}
-  <BlogThumbnailMedium class="{$$props.class}" this={thumbnailSize} {coverImage} {title} {text} {authorImage} {author} />
+    <BlogThumbnailMedium
+      class={$$props.class}
+      this={thumbnailSize}
+      {coverImage}
+      {title}
+      {text}
+      {authorImage}
+      {author}
+    />
   {:else if style === Style.Large}
-  <BlogThumbnailLarge class="{$$props.class}" this={thumbnailSize} {coverImage} {title} {text} {authorImage} {author} />
+    <BlogThumbnailLarge
+      class={$$props.class}
+      this={thumbnailSize}
+      {coverImage}
+      {title}
+      {text}
+      {authorImage}
+      {author}
+    />
   {/if}
-  
 </main>

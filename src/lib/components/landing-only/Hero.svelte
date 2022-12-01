@@ -4,7 +4,7 @@
 </script>
 
 <main class="hero h-[92vh]">
-  <img class='w-full h-full overflow-hidden object-cover object-top' alt='' src={Background}>
+  <img class="h-full w-full overflow-hidden object-cover object-top" alt="" src={Background} />
 
   <div class="hero-content flex-col lg:flex-row">
     <Icon icon="logoFull" class="mr-12 w-64" />

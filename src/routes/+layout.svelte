@@ -2,7 +2,7 @@
   import '../app.css'
   import { NavBar, Footer } from '$components'
 
-  let height = 84;
+  let height = 84
 </script>
 
 <svelte:head>
@@ -10,7 +10,7 @@
 </svelte:head>
 
 <main>
-  <NavBar {height}/>
+  <NavBar {height} />
   <div>
     <slot />
   </div>
