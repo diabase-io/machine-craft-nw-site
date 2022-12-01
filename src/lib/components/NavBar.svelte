@@ -22,10 +22,10 @@
     relativeStyle = 'bg-black text-white'
     currentLogo = 'logoMin'
   } else if (windowScrollPos < 100 && $page.route.id === '/') {
-    relativeStyle = 'bg-transparent text-white'
+    relativeStyle = 'bg-transparent text-white transition-[background] duration-150'
     currentLogo = 'logoMin'
   } else {
-    relativeStyle = 'bg-white text-black'
+    relativeStyle = 'bg-white text-black transition-[background] duration-150'
     currentLogo = 'logoMinDark'
   }
 
@@ -48,7 +48,7 @@
 <svelte:window bind:scrollY={windowScrollPos} />
 <main
   style="--hd: {height}px"
-  class="{$$props.class} {relativeStyle} top-0 z-50 h-[var(--hd)] w-full px-5 text-xl transition-all duration-150 md:px-16 dsk:fixed"
+  class="{$$props.class} {relativeStyle} top-0 z-50 h-[var(--hd)] w-full px-5 text-xl md:px-16 dsk:fixed"
 >
   <div class="flex justify-between">
     <!-- logo -->
