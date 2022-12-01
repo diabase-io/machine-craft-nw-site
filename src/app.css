@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -14,6 +15,11 @@ body {
 html,
 body {
   height: 100%;
+}
+
+button {
+  font-family: 'Titillium Web';
+  color: white;
 }
 
 input,
@@ -60,6 +66,9 @@ p {
 
 /* mobile styles */
 @media screen and (max-width: 1023px) {
+  button {
+    font-family: 'Titillium Web';
+  }
   h1 {
     font-size: 34px;
     line-height: 49px;

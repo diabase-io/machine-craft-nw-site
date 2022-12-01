@@ -25,7 +25,6 @@
 
 <style>
   /* adds drop shadow and hover animation */
-  /* TODO: this is clipping and making a border somehow. Need to fix this. */
   main {
     transition: filter 0.3s ease;
     filter: drop-shadow(2px 2px 15px rgba(0, 0, 0, 0.25));

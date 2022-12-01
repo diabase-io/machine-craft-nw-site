@@ -1,8 +1,6 @@
-import { NOTION_DATABASE_ID, NOTION_KEY } from '$env/static/private'
-import { Client } from '@notionhq/client'
+import { BLOGS_DATABASE_ID } from '$env/static/private'
+import { NOTION_CLIENT } from '$lib/constants'
 import { json } from '@sveltejs/kit'
-
-const notionClient = new Client({ auth: NOTION_KEY })
 
 /**
  * Gets the meta data for each blog post.
@@ -13,9 +11,9 @@ export async function GET() {
   console.log('getting blogs...')
 
   // gets all published pages
-  const pages = await notionClient.databases
+  const pages = await NOTION_CLIENT.databases
     .query({
-      database_id: NOTION_DATABASE_ID,
+      database_id: BLOGS_DATABASE_ID,
       filter: {
         or: [
           {
@@ -33,7 +31,7 @@ export async function GET() {
 
   // gets the author of each page and appends it to the object
   for (let i = 0; i < pages.results.length; i++) {
-    const response = await notionClient.users.retrieve({ user_id: pages.results[i].created_by.id })
+    const response = await NOTION_CLIENT.users.retrieve({ user_id: pages.results[i].created_by.id })
     Object.assign(pages.results[i], { author: response })
   }
 

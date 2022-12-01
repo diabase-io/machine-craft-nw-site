@@ -5,12 +5,13 @@
     - map the import alias to a string name in iconMap
  -->
 <script lang="ts" context="module">
+  import Hamburger from './Hamburger.svelte'
+  import Close from './Close.svelte'
+  import QuoteCircle from './QuoteCircle.svelte'
+
   import LogoFull from './LogoFull.svelte'
   import LogoMin from './LogoMin.svelte'
   import LogoMinDark from './LogoMinDark.svelte'
-
-  import Hamburger from './Hamburger.svelte'
-  import Close from './Close.svelte'
 
   // matches a string name (the icon name) to an imported svelte components (the icon).
   const iconMap = {
@@ -18,7 +19,8 @@
     logoMin: LogoMin,
     logoMinDark: LogoMinDark,
     hamburger: Hamburger,
-    close: Close
+    close: Close,
+    quoteCircle: QuoteCircle
   }
 
   /** A type representing valid icon names. */

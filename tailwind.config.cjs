@@ -3,6 +3,9 @@ module.exports = {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
     extend: {
+      colors: {
+        'secondary-dark': '#5D5179'
+      },
       fontSize: {
         dsk: ['19px', '1.75rem']
       },
@@ -31,7 +34,7 @@ module.exports = {
     themes: [
       {
         dark: {
-          primary: '#1980FA',
+          primary: '#008EDE',
           secondary: '#A55FFE',
           accent: '#37cdbe',
           neutral: '#3d4451',

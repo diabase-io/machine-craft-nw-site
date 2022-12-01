@@ -31,5 +31,5 @@ export const PATHS = {
   shop: '/shop',
   machines: '/machines',
   blog: '/blog',
-  contact: '/contact',
+  contact: '/contact'
 }

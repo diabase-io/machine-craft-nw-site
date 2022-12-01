@@ -12,13 +12,31 @@ import type { LayoutLoad } from './$types'
 // export const prerender = true;
 
 export const load: LayoutLoad = async ({ fetch }) => {
-  const response = await fetch(API.blogs, { method: 'GET' })
+  let blogs
+  let reviews
+
+  //  Get blog posts
+  let response = await fetch(API.blogs, { method: 'GET' })
   if (response.ok) {
-    return { blogs: await response.json() }
-  }
-  //
+    blogs = await response.json()
+  } //
   else {
     console.log('There were no blog posts to get.')
     // TODO: do something!
+  }
+
+  // get reviews
+  response = await fetch(API.reviews, { method: 'GET' })
+  if (response.ok) {
+    reviews = await response.json()
+  } //
+  else {
+    console.log('There were no testimonials to get.')
+    // TODO: do something!
+  }
+
+  return {
+    blogs,
+    reviews
   }
 }
