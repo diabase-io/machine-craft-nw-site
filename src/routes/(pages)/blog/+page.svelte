@@ -8,15 +8,15 @@
 
 <main>
   <InfoPageHeader class="" title="THE BLOG" titleFont={280} />
-  
+
   <!-- Subtitle and search bar -->
-  <div class="flex justify-center gap-10 sticky top-20 z-50 bg-white mb-5">
+  <div class="sticky top-20 z-50 mb-5 flex justify-center gap-10 bg-white">
     <h1 class="text-[50px]">OUR BEST PROJECTS, ON DISPLAY</h1>
     <div class="flex flex-col justify-center">
       <input class="h-12 w-[440px] rounded-lg border border-gray-400" />
     </div>
   </div>
-  
+
   <div class="mx-auto w-[1360px]">
     {#each data.json as thumbnail, i}
       <BlogThumbnail

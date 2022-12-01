@@ -78,18 +78,13 @@
         <li><a draggable="false" href={'/blog'}>The Blog</a></li>
 
         <div class="flex flex-col justify-center py-2 lg:mr-4 lg:h-[var(--hd)] lg:py-0">
-          <button
-            on:click
-            class=" btn btn-secondary w-40 text-lg normal-case lg:w-max"
-          >
+          <button on:click class=" btn btn-secondary w-40 text-lg normal-case lg:w-max">
             Virtual Tour
           </button>
         </div>
 
         <div class="flex flex-col justify-center py-2 lg:h-[var(--hd)] lg:py-0">
-          <button on:click class="btn btn-primary text-lg normal-case">
-            Request a Quote
-          </button>
+          <button on:click class="btn btn-primary text-lg normal-case"> Request a Quote </button>
         </div>
       </ul>
     </div>
