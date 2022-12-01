@@ -92,7 +92,7 @@
         </div>
 
         <div class="flex flex-col justify-center py-2 lg:h-[var(--hd)] lg:py-0">
-          <button on:click={() => goto('/contact')} class="btn btn-primary text-lg normal-case">
+          <button on:click={() => goto(PATHS.contact)} class="btn btn-primary text-lg normal-case">
             Request a Quote
           </button>
         </div>

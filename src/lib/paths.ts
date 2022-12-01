@@ -30,5 +30,6 @@ export const PATHS = {
   work: '/work',
   shop: '/shop',
   machines: '/machines',
-  blog: '/blog'
+  blog: '/blog',
+  contact: '/contact',
 }
