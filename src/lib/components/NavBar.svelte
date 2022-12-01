@@ -18,6 +18,7 @@
   let relativeStyle: string
   let currentLogo: IconType
 
+  // change the style based on the current route and scroll distance
   $: if ($page.route.id === '/(pages)/work') {
     relativeStyle = 'bg-black text-white'
     currentLogo = 'logoMin'
@@ -67,7 +68,7 @@
     <div
       class="{mobileMenuDisplaying
         ? 'absolute top-[var(--hd)] left-0 block w-full bg-black'
-        : 'hidden '}
+        : 'hidden'}
       z-50 flex-col justify-center pb-5 lg:static lg:flex lg:p-0"
     >
       <ul class="menu menu-vertical mx-auto w-52 lg:menu-horizontal lg:w-max ">
@@ -78,7 +79,7 @@
 
         <div class="flex flex-col justify-center py-2 lg:mr-4 lg:h-[var(--hd)] lg:py-0">
           <button
-            on:click={toggleMenu}
+            on:click
             class=" btn btn-secondary w-40 text-lg normal-case lg:w-max"
           >
             Virtual Tour
@@ -86,7 +87,7 @@
         </div>
 
         <div class="flex flex-col justify-center py-2 lg:h-[var(--hd)] lg:py-0">
-          <button on:click={toggleMenu} class="btn btn-primary text-lg normal-case">
+          <button on:click class="btn btn-primary text-lg normal-case">
             Request a Quote
           </button>
         </div>
