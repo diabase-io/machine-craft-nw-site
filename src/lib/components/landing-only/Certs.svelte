@@ -1,5 +1,4 @@
 <script>
-  import { mcnwVerisysRegistrarsLogo, mcnwBlueSeal, mcnwItarLogo } from '$lib/assets'
   import ISO from "$lib/assets/iso.png"
   import Itar from "$lib/assets/itar.png"
   import bbb from "$lib/assets/bbb-logo.png"
