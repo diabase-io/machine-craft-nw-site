@@ -9,6 +9,7 @@
   import { Icon } from '$components'
   import type { IconType } from '$components/icons/Icon.svelte'
   import { page } from '$app/stores'
+  import { goto } from '$app/navigation'
 
   export let height = 84
 
@@ -16,16 +17,19 @@
   let mobileMenuDisplaying = false
   let menuToggleIcon: IconType = 'hamburger'
   let relativeStyle: string
-  let currentLogo: IconType
+  let currentLogo: IconType = 'logoMin';
 
   // change the style based on the current route and scroll distance
   $: if ($page.route.id === '/(pages)/work') {
     relativeStyle = 'bg-black text-white'
     currentLogo = 'logoMin'
-  } else if (windowScrollPos < 100 && $page.route.id === '/') {
+  } //
+  // start transparent then turn white
+  else if (windowScrollPos < 100 && ($page.route.id === '/' || $page.route.id === '/(other-pages)/contact')) {
     relativeStyle = 'bg-transparent text-white transition-[background] duration-150'
     currentLogo = 'logoMin'
-  } else {
+  } //
+  else {
     relativeStyle = 'bg-white text-black transition-[background] duration-150'
     currentLogo = 'logoMinDark'
   }
@@ -84,7 +88,7 @@
         </div>
 
         <div class="flex flex-col justify-center py-2 lg:h-[var(--hd)] lg:py-0">
-          <button on:click class="btn btn-primary text-lg normal-case"> Request a Quote </button>
+          <button on:click={() => goto('/contact')} class="btn btn-primary text-lg normal-case"> Request a Quote </button>
         </div>
       </ul>
     </div>
