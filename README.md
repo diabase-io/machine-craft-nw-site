@@ -15,6 +15,14 @@
 See `svelte.config.js` for a list of route aliases. These get used throughout the program (treat
 them like constants)
 
+### Routing
+
+When routing, use the PATHS and API constant variables. That way if a directory route changes,
+instead of finding every place we called that route and changing it, we can just change one
+variable. This doesn't apply for routes such as `/(pages)/work`. You could move `work` to `/work`
+or `/(other)/work` without needing to change the PATHS constant. This is because we have helper
+functions defined in `paths.ts` which account for the `(...)` in paths.
+
 ### Margins
 
 To maintain low coupling and high cohesion, don't design components and pages with responsive

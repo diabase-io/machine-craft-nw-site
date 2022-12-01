@@ -1,9 +1,9 @@
 <script lang="ts">
   import { InfoPageHeader, BlogThumbnail } from '$components'
   import { Style } from '$components/BlogThumbnail.svelte'
-  import type { PageData } from './$types'
+  import type { LayoutData } from '../$types'
 
-  export let data: PageData
+  export let data: LayoutData
 </script>
 
 <main>
@@ -18,7 +18,7 @@
   </div>
 
   <div class="mx-auto w-[1360px]">
-    {#each data.json as thumbnail, i}
+    {#each data.blogs as thumbnail, i}
       <BlogThumbnail
         style={i == 0 ? Style.Large : Style.Medium}
         coverImage={thumbnail.cover.file.url}

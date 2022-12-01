@@ -10,6 +10,7 @@
   import type { IconType } from '$components/icons/Icon.svelte'
   import { page } from '$app/stores'
   import { goto } from '$app/navigation'
+  import { PATHS } from '$lib/paths'
 
   export let height = 84
 
@@ -17,7 +18,7 @@
   let mobileMenuDisplaying = false
   let menuToggleIcon: IconType = 'hamburger'
   let relativeStyle: string
-  let currentLogo: IconType = 'logoMin';
+  let currentLogo: IconType = 'logoMin'
 
   // change the style based on the current route and scroll distance
   $: if ($page.route.id === '/(pages)/work') {
@@ -25,7 +26,10 @@
     currentLogo = 'logoMin'
   } //
   // start transparent then turn white
-  else if (windowScrollPos < 100 && ($page.route.id === '/' || $page.route.id === '/(other-pages)/contact')) {
+  else if (
+    windowScrollPos < 100 &&
+    ($page.route.id === '/' || $page.route.id === '/(other-pages)/contact')
+  ) {
     relativeStyle = 'bg-transparent text-white transition-[background] duration-150'
     currentLogo = 'logoMin'
   } //
@@ -57,7 +61,7 @@
 >
   <div class="flex justify-between">
     <!-- logo -->
-    <a href="/" class="h-[var(--hd)] cursor-pointer select-none">
+    <a href={PATHS.home} class="h-[var(--hd)] cursor-pointer select-none">
       <Icon icon={currentLogo} class="w-20" />
     </a>
 
@@ -76,10 +80,10 @@
       z-50 flex-col justify-center pb-5 lg:static lg:flex lg:p-0"
     >
       <ul class="menu menu-vertical mx-auto w-52 lg:menu-horizontal lg:w-max ">
-        <li><a draggable="false" href={'/work'}>The Work</a></li>
-        <li><a draggable="false" href={'/shop'}>The Shop</a></li>
-        <li><a draggable="false" href={'/machines'}>The Machines</a></li>
-        <li><a draggable="false" href={'/blog'}>The Blog</a></li>
+        <li><a draggable="false" href={PATHS.work}>The Work</a></li>
+        <li><a draggable="false" href={PATHS.shop}>The Shop</a></li>
+        <li><a draggable="false" href={PATHS.machines}>The Machines</a></li>
+        <li><a draggable="false" href={PATHS.blog}>The Blog</a></li>
 
         <div class="flex flex-col justify-center py-2 lg:mr-4 lg:h-[var(--hd)] lg:py-0">
           <button on:click class=" btn btn-secondary w-40 text-lg normal-case lg:w-max">
@@ -88,7 +92,9 @@
         </div>
 
         <div class="flex flex-col justify-center py-2 lg:h-[var(--hd)] lg:py-0">
-          <button on:click={() => goto('/contact')} class="btn btn-primary text-lg normal-case"> Request a Quote </button>
+          <button on:click={() => goto('/contact')} class="btn btn-primary text-lg normal-case">
+            Request a Quote
+          </button>
         </div>
       </ul>
     </div>

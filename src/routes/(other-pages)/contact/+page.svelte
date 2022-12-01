@@ -1,5 +1,5 @@
 <script>
-  import ContactSection from "$components/ContactSection.svelte"
-
+  import ContactSection from '$components/ContactSection.svelte'
 </script>
-<ContactSection showAddress={true}></ContactSection>
+
+<ContactSection showAddress={true} />

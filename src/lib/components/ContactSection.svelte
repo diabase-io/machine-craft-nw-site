@@ -32,9 +32,8 @@
   />
 
   <form class="px-[300px] pt-12 pb-32" name="ContactUsForm" on:submit|preventDefault={onSubmit}>
-
     {#if showAddress}
-      <div class='h-20'></div>
+      <div class="h-20" />
     {/if}
 
     <h1 class="text-white">LETS GET IN TOUCH</h1>
@@ -59,27 +58,47 @@
         <label class="sm:basis-[400px]" for="email">
           Contact Email
           <br />
-          <input name="email" bind:value={contactEmail} type="email" class='text-black' required />
+          <input name="email" bind:value={contactEmail} type="email" class="text-black" required />
         </label>
         <br /><br />
         <!-- phone input -->
         <label class="flex-grow lg:basis-[200px]" for="email">
           Contact Phone
           <br />
-          <input name="phone" bind:value={contactPhone} type="tel" class='text-black' maxlength="15" required />
+          <input
+            name="phone"
+            bind:value={contactPhone}
+            type="tel"
+            class="text-black"
+            maxlength="15"
+            required
+          />
         </label>
       </div>
       <br />
       <label for="subject">
         Name of your Company
         <br />
-        <input name="subject" bind:value={contactSubject} minLength="1" class='text-black' required />
+        <input
+          name="subject"
+          bind:value={contactSubject}
+          minLength="1"
+          class="text-black"
+          required
+        />
       </label>
       <br /><br />
       <label for="data">
         How can we Help?
         <br />
-        <textarea name="data" bind:value={contactMessage} minlength="1" class='text-black' maxlength="3000" required />
+        <textarea
+          name="data"
+          bind:value={contactMessage}
+          minlength="1"
+          class="text-black"
+          maxlength="3000"
+          required
+        />
       </label>
     </div>
     <br /><br />
