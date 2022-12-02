@@ -1,34 +1,41 @@
 <script lang="ts">
   import { InfoPageHeader } from '$components'
   import ReviewCard from '$components/ReviewCard.svelte'
-  import { isCurrentRoute, PATHS } from '$lib/paths'
   import type { LayoutData } from '../$types'
-  import { page } from '$app/stores'
 
   export let data: LayoutData
+  
+  let reviewsToShow = [];
 
-  $: if (isCurrentRoute(page, PATHS.work)) {
-    console.log('TRUE')
-  } else {
-    console.log('FALSE')
-  }
+  data.reviews.forEach(review => {
+    if (review.properties['Show On'].select.name === 'Work Page') {
+      reviewsToShow.push(review);
+    }
+  });
+
 </script>
 
-<InfoPageHeader class="-mt-4" title="THE WORK" titleFont={250} />
-
-<div class="mx-auto w-[1360px]">
-  {#each data.reviews as review}
-    <ReviewCard
-      title={review.properties.Name.title[0].plain_text}
-      img={review.properties['Reviewer Picture'].files[0].file.url}
-      text={review.properties['Short Text'].rich_text[0].plain_text}
-      reviewerName={review.properties['Reviewer Name'].rich_text[0].plain_text}
-      company={review.properties['Reviewer Company'].rich_text[0].plain_text}
-    />
-  {/each}
-</div>
-
-<br />
-<br />
-<br />
-<br />
+<main>
+  <!-- above the fold -->
+  <div class='h-screen flex flex-col'>
+    <InfoPageHeader class="-mt-4 bg-black text-white" title="THE WORK" titleFont={250} />
+    <div class='bg-black text-white flex-grow'>
+      <ReviewCard
+        title={reviewsToShow[0].properties.Name.title[0].plain_text}
+        img={reviewsToShow[0].properties['Reviewer Picture'].files[0].file.url}
+        text={reviewsToShow[0].properties['Short Text'].rich_text[0].plain_text}
+        reviewerName={reviewsToShow[0].properties['Person'].rich_text[0].plain_text}
+        company={reviewsToShow[0].properties['Company'].rich_text[0].plain_text}
+      />
+    </div>
+    
+  </div>
+  <div class="mx-auto w-[1360px]">
+    
+  </div>
+  
+  <br />
+  <br />
+  <br />
+  <br />
+</main>
