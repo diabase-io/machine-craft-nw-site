@@ -32,19 +32,28 @@ export async function GET() {
   if (response) {
     let reviews = []
 
-        // gets each important property from reviews.results and maps them to the reviews array to
-        // simplify the property lookup process later on
-        for (let i = 0; i < response.results.length; i++) {
-            reviews[i] = {}
 
-            // gets the title
-            Object.assign(reviews[i], { title: response.results[i].properties.Name.title[0].plain_text})
-            Object.assign(reviews[i], { reviewerImage: response.results[i].properties['Reviewer Picture'].files[0].file.url})
-            Object.assign(reviews[i], { shortText: response.results[i].properties['Short Text'].rich_text[0].plain_text})
-            Object.assign(reviews[i], { reviewerName: response.results[i].properties['Person'].rich_text[0].plain_text})
-            Object.assign(reviews[i], { company: response.results[i].properties['Company'].rich_text[0].plain_text})
-            Object.assign(reviews[i], { showOnWorkPage: response.results[i].properties['Show On'].select.name === 'Work Page'})
-        }
+
+    // gets each important property from reviews.results and maps them to the reviews array to
+    // simplify the property lookup process later on
+    for (let i = 0; i < response.results.length; i++) {
+        reviews[i] = {}
+
+        Object.assign(reviews[i], { title: response.results[i].properties.Name.title[0].plain_text})
+        Object.assign(reviews[i], { reviewerImage: response.results[i].properties['Reviewer Picture'].files[0].file.url})
+        Object.assign(reviews[i], { shortText: response.results[i].properties['Short Text'].rich_text[0].plain_text})
+        Object.assign(reviews[i], { reviewerName: response.results[i].properties['Person'].rich_text[0].plain_text})
+        Object.assign(reviews[i], { company: response.results[i].properties['Company'].rich_text[0].plain_text})
+        Object.assign(reviews[i], { showOnWorkPage: response.results[i].properties['Show On'].select.name === 'Work Page'})
+
+        Object.assign(reviews[i], {
+            blogId: response.results[i].properties['Blog'].relation.length > 0
+                  ? response.results[i].properties['Blog'].relation[0].id
+                  : undefined
+        })
+        // console.log(reviews[i].blogId);
+        
+    }
 
     return json(reviews)
   }

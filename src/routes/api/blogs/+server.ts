@@ -36,20 +36,19 @@ export async function GET() {
         for (let i = 0; i < pages.results.length; i++) {
             blogs[i] = {}
                     
+            // gets the id
+            Object.assign(blogs[i], { id: pages.results[i].id })
+
             // gets the author
             const response = await NOTION_CLIENT.users.retrieve({ user_id: pages.results[i].created_by.id })
             Object.assign(blogs[i], { authorImage: response.avatar_url })
             Object.assign(blogs[i], { authorName: response.name })
-
-            // console.log(pages.results[i].cover)
 
             // gets the cover image
             Object.assign(blogs[i], { coverImage: pages.results[i].cover[pages.results[i].cover.type].url})
 
             // gets the title
             Object.assign(blogs[i], { title: pages.results[i].properties.Name.title[0].plain_text})
-
-            // console.log(blogs[i])
         }
         return json(blogs)
     }

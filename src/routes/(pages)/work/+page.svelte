@@ -1,12 +1,18 @@
 <script lang="ts">
   import { InfoPageHeader } from '$components'
   import ReviewCard from '$components/ReviewCard.svelte'
+  import ReviewWithBlog from '$components/ReviewWithBlog.svelte'
   import type { LayoutData } from '../$types'
 
   export let data: LayoutData
   
   // there can only be 3 at most
-  const reviews = data.reviews.filter(review => review.showOnWorkPage)
+  let reviews = data.reviews.filter(review => review.showOnWorkPage)
+
+  // gets the blogs for each review on the work page
+  for (let i = 0; i < reviews.length; i++) {
+    Object.assign(reviews[i], { blog: data.blogs.find(blog => blog.id === reviews[i].blogId ) });
+  }
 
 </script>
 
@@ -25,12 +31,13 @@
 
     </div>
     <div>
+
       {#each reviews as review, i}
 
-      <ReviewCard
-        title={review.title}
-        img={review.reviewerImage}
-        text={review.shortText}
+      <ReviewWithBlog
+        blog={review.blog}
+        reviewerImage={review.reviewerImage}
+        reviewText={review.shortText}
         reviewerName={review.reviewerName}
         company={review.company}
       />

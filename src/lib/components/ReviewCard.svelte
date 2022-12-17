@@ -1,7 +1,6 @@
 <script lang="ts">
   import { Icon } from '$components'
 
-  export let title: string
   export let img: string
   export let text: string
   export let reviewerName: string
@@ -17,7 +16,7 @@
   }
 </style>
 
-<main class="relative h-[540px] w-[368px] rounded-lg bg-gray-50 text-black">
+<main class="{$$props.class} relative h-[540px] w-[368px] rounded-lg bg-gray-50 text-black">
   <img alt="" src={img} class="h-[200px] w-full rounded-t-lg object-cover object-top" />
   <div class="h-4 w-full bg-secondary-dark">
     <Icon icon="quoteCircle" class="translate-x-5 -translate-y-6" />
