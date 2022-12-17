@@ -9,7 +9,7 @@
 </script>
 
 <main class="{$$props.class} relative flex h-[326px] w-[1320px] rounded-lg bg-gray-50 text-[19px]">
-  <img class="h-[325px] max-w-[490px] shrink-0 rounded-l-lg object-cover" alt="" src={coverImage} />
+  <img class="h-[325px] max-w-[490px] shrink-0 rounded-l-lg object-cover" alt={coverImage} src={coverImage} />
 
   <div class="flex h-[340px] flex-col overflow-hidden py-6 px-10">
     <h2 class="m-0 font-medium leading-10">

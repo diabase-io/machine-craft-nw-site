@@ -18,12 +18,12 @@
   </div>
 
   <div class="mx-auto w-[1360px]">
-    {#each data.blogs as thumbnail, i}
+    {#each data.blogs as blog, i}
       <BlogThumbnail
         style={i == 0 ? Style.Large : Style.Medium}
-        coverImage={thumbnail.cover.file.url}
-        title={thumbnail.properties.Name.title[0].plain_text}
-        authorImage={thumbnail.author.avatar_url}
+        coverImage={blog.coverImage}
+        title={blog.title}
+        authorImage={blog.authorImage}
         class="m-4"
       />
       {#if i == 0}
