@@ -5,13 +5,8 @@
 
   export let data: LayoutData
   
-  let reviewsToShow = [];
-
-  data.reviews.forEach(review => {
-    if (review.properties['Show On'].select.name === 'Work Page') {
-      reviewsToShow.push(review);
-    }
-  });
+  // there can only be 3 at most
+  const reviews = data.reviews.filter(review => review.showOnWorkPage)
 
 </script>
 
@@ -20,18 +15,28 @@
   <div class='h-screen flex flex-col'>
     <InfoPageHeader class="-mt-4 bg-black text-white" title="THE WORK" titleFont={250} />
     <div class='bg-black text-white flex-grow'>
-      <ReviewCard
-        title={reviewsToShow[0].properties.Name.title[0].plain_text}
-        img={reviewsToShow[0].properties['Reviewer Picture'].files[0].file.url}
-        text={reviewsToShow[0].properties['Short Text'].rich_text[0].plain_text}
-        reviewerName={reviewsToShow[0].properties['Person'].rich_text[0].plain_text}
-        company={reviewsToShow[0].properties['Company'].rich_text[0].plain_text}
-      />
+
+      
     </div>
     
   </div>
-  <div class="mx-auto w-[1360px]">
-    
+  <div class='flex'>
+    <div class='w-1/2'>
+
+    </div>
+    <div>
+      {#each reviews as review, i}
+
+      <ReviewCard
+        title={review.title}
+        img={review.reviewerImage}
+        text={review.shortText}
+        reviewerName={review.reviewerName}
+        company={review.company}
+      />
+
+      {/each}
+    </div>
   </div>
   
   <br />
