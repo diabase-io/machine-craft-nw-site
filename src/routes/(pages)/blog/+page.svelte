@@ -1,6 +1,6 @@
 <script lang="ts">
   import { InfoPageHeader, BlogThumbnail } from '$components'
-  import { Style } from '$components/BlogThumbnail.svelte'
+  import { Style } from '$components/blogs/BlogThumbnail.svelte'
   import type { LayoutData } from '../$types'
 
   export let data: LayoutData
